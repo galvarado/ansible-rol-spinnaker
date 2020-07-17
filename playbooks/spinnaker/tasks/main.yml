@@ -1,0 +1,43 @@
+---
+# tasks file for spinnaker
+
+- name: Only run "update_cache=yes" if the last one is more than 3600 seconds ago
+  become: yes
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: Download Halyard
+  get_url:
+    url=https://raw.githubusercontent.com/spinnaker/halyard/master/install/debian/InstallHalyard.sh
+    dest=/tmp/InstallHalyard.sh
+    validate_certs=no
+    mode=u+r+x
+
+- name: Install python-pexpect
+  become: yes
+  apt:
+    name: python-pexpect
+    state: present
+
+- name: Install Halyard
+  become: yes
+  ignore_errors: yes
+  expect:
+    command: bash /tmp/InstallHalyard.sh
+    responses:
+      (.*)non-root user(.*): "guillermo"
+      (.*)auto-completion(.*): "Y"
+
+
+- name: Verify installation
+  command: hal -v
+  register: out
+
+- debug: var=out.stdout_lines
+
+
+
+
+
+
