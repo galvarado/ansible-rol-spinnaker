@@ -17,8 +17,10 @@ Read more abunt spinnaker kubernetes cloud provider at: https://spinnaker.io/set
 
 ### 1. Add to your ansible hosts file an entry for spinnaker:
 
+´´´
 [spinnaker]
 x.x.x.x
+´´´
 
 ### 2. Place your kubeconfig file:
 
