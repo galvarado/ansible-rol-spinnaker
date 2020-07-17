@@ -24,6 +24,10 @@ x.x.x.x
 
 ### 2. Place your kubeconfig file:
 
-Copy and paste a valid kubeconfig file in the following path: templates/kubeconfig:
+Copy and paste a valid kubeconfig file in the following path:
+
+```
+templates/kubeconfig:
+```
 
 
