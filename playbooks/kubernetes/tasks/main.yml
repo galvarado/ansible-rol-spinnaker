@@ -1,0 +1,34 @@
+---
+# tasks file for kubernetes
+
+- name: Install dependency (apt-transport-https)
+  become: yes
+  apt:
+    name: apt-transport-https
+    state: present
+
+- name: Add  apt signing key, uses key at https://packages.cloud.google.com/apt/doc/apt-key.gpg
+  become: yes
+  apt_key:
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+    state: present
+
+- name: Add kubernetes repo to apt sources
+  become: yes
+  apt_repository:
+    repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
+    state: present
+
+- name: Install kubectl
+  become: yes
+  apt:
+    name: kubectl
+    state: present
+    update_cache: true
+
+- name: Verify kubectl installation
+  command: kubectl help
+  register: out
+
+- debug: var=out.stdout_lines
+

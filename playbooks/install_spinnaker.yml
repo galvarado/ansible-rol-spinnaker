@@ -2,4 +2,6 @@
   gather_facts: False
 
   roles:
-    - spinnaker
+#    - halyard
+#    - kubernetes
+    - config

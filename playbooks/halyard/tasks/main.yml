@@ -1,5 +1,5 @@
 ---
-# tasks file for spinnaker
+# tasks file for halyard
 
 - name: Only run "update_cache=yes" if the last one is more than 3600 seconds ago
   become: yes
@@ -26,11 +26,11 @@
   expect:
     command: bash /tmp/InstallHalyard.sh
     responses:
-      (.*)non-root user(.*): "guillermo"
+      (.*)non-root user(.*): "{{ system_user}}"
       (.*)auto-completion(.*): "Y"
 
 
-- name: Verify installation
+- name: Verify halyard installation
   command: hal -v
   register: out
 
