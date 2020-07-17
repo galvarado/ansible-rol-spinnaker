@@ -1,9 +1,8 @@
 # ansible-rol-spinnaker
 
-Ansible roles to install a production ready Spinnaker based on local debian installation and using kubernetes as a cloud provider.
+Ansible role to install a production ready Spinnaker based on local debian installation and using kubernetes as a cloud provider.
 
 Read more about the spinnaker environment at: https://spinnaker.io/setup/install/environment/
-
 Read more abunt spinnaker kubernetes cloud provider at: https://spinnaker.io/setup/install/providers/kubernetes-v2/ 
 
 
