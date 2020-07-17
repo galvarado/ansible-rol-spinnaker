@@ -27,7 +27,7 @@ x.x.x.x
 Copy and paste a valid kubeconfig file in the following path:
 
 ```
-templates/kubeconfig:
+templates/kubeconfig
 ```
 
 
