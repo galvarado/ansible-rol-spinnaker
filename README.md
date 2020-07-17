@@ -1,9 +1,17 @@
 # ansible-rol-spinnaker
 
-Ansible role to install a production ready Spinnaker based on local debian installation and using kubernetes as a cloud provider.
+Ansible roles to install a production ready Spinnaker.
 
-Read more about the spinnaker environment at: https://spinnaker.io/setup/install/environment/
-Read more abunt spinnaker kubernetes cloud provider at: https://spinnaker.io/setup/install/providers/kubernetes-v2/ 
+This deployment is based on:
+- local debian installation
+- kubernetes as a cloud provider
+- Google Cloud Storage as external storage provider
+
+Read more at:
+
+- https://spinnaker.io/setup/install/environment/
+- https://spinnaker.io/setup/install/providers/kubernetes-v2/ 
+- https://spinnaker.io/setup/install/storage/
 
 
 ## How to use 
@@ -29,4 +37,5 @@ Copy and paste a valid kubeconfig file in the following path:
 templates/kubeconfig
 ```
 
+It will be used by kubectl to create a spinnaker service account the target kubernetes.
 
