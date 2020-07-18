@@ -1,2 +1,2 @@
-templates/kubeconfig
-templates/gsc-account.json
+playbooks/templates/kubeconfig
+playbooks/templates/gsc-account.json
