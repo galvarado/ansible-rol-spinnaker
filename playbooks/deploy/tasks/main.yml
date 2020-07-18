@@ -17,3 +17,8 @@
 - name: Apply changes to enable spinnaker at 0.0.0.0
   become: yes
   command: hal deploy apply
+
+- name: Connect to the Spinnaker UI
+  become: yes
+  command: hal deploy connect
+
