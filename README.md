@@ -40,7 +40,7 @@ playbooks/templates/kubeconfig
 
 It will be used by kubectl to create a spinnaker service account in the target kubernetes.
 
-### 3. Create a google service account to spinnaker can manage GCS:
+### 3. Create a google service account to spinnaker be able to manage GCS:
 
 Execute the script located at
 ```
@@ -62,3 +62,18 @@ Copy it in the following path:
 ```
 playbooks/templates/gcs-account.json
 ```
+
+### 4. playbook variables
+
+```
+PENDING
+```
+### 5. Execute the playbook
+
+```
+ansible-playbook install_spinnaker.yml 
+```
+
+When the playbook complete successufl, go to http://[YOU_PUBLIC_IP_ADDRESS]:9000
+
+So, you are ready to do Continuos Deployment in your k8s =) 
