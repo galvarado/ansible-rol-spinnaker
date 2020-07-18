@@ -1,0 +1,4 @@
+---
+# vars file for storage-service
+system_user: guillermo
+gcloud_service_account_name: spinnaker-gcs-account@sentinella-1139.iam.gserviceaccount.com

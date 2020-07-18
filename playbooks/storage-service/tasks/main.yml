@@ -1,0 +1,56 @@
+---
+# tasks file for storage-service
+
+- name: Add gcloud key
+  become: yes
+  apt_key:
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+    state: present
+
+- name: Add gcloud repos
+  become: yes
+  apt_repository:
+    repo: "deb http://packages.cloud.google.com/apt cloud-sdk main"
+    update_cache: yes
+
+- name: Install google-cloud-sdk
+  become: yes
+  apt:
+    name: google-cloud-sdk
+    state: present
+    update_cache: true
+
+- name: Verify google-cloud-sdk installation
+  command: gcloud info
+  register: out
+
+- debug: var=out.stdout_lines
+
+
+- name: Ensures /home/{{ system_user }}/.gcp dir exists
+  file: path=/home/{{ system_user }}/.gcp state=directory
+
+- name: Copy service account file
+  copy:
+    src: ../templates/gcs-account.json
+    dest: /home/{{ system_user }}/.gcp/gcs-account.json
+    owner: "{{ system_user }}"
+    group: "{{ system_user }}"
+    mode: u+r+x
+
+- name: Login gcloud service account
+  command: gcloud auth activate-service-account {{ gcloud_service_account_name }} --key-file=/home/{{ system_user }}/.gcp/gcs-account.json
+
+
+- name: Tell haylard the storage settings
+  shell: |
+    SERVICE_ACCOUNT_NAME=spinnaker-gcs-account
+    SERVICE_ACCOUNT_DEST=~/.gcp/gcs-account.json
+    PROJECT=$(gcloud config get-value project)
+    BUCKET_LOCATION=us
+
+    hal config storage gcs edit --project $PROJECT --bucket-location $BUCKET_LOCATION --json-path $SERVICE_ACCOUNT_DEST
+
+    hal config storage edit --type gcs
+
+

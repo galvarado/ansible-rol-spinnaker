@@ -4,4 +4,6 @@
   roles:
 #    - halyard
 #    - kubernetes
-    - config
+#    - config
+#    - storage-service
+     - deploy

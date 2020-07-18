@@ -1,0 +1,19 @@
+---
+# tasks file for deploy
+
+- name: Set spinnaker version
+  command: hal config version edit --version {{ version_to_deploy }}
+
+- name: Deploy spinnaker
+  become: yes
+  command: hal deploy apply
+
+- name: Tell haylard enable gate and deck without auth
+  shell: |
+    echo "host: 0.0.0.0" | tee \
+    ~/.hal/default/service-settings/gate.yml \
+    ~/.hal/default/service-settings/deck.yml
+
+- name: Apply changes to enable spinnaker at 0.0.0.0
+  become: yes
+  command: hal deploy apply
