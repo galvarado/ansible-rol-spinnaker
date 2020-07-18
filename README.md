@@ -3,12 +3,11 @@
 Ansible roles to install a production ready Spinnaker.
 
 This deployment is based on:
-- local debian installation
-- kubernetes as a cloud provider
+- Local environment (local debian installation)
+- Kubernetes as a cloud provider
 - Google Cloud Storage as external storage provider
 
 Read more at:
-
 - https://spinnaker.io/setup/install/environment/
 - https://spinnaker.io/setup/install/providers/kubernetes-v2/ 
 - https://spinnaker.io/setup/install/storage/
@@ -18,9 +17,11 @@ Read more at:
 
 ### Requirements
 
-- A VM based on Ubuntu 16.03 to install spinnaker
+- A VM based on Ubuntu 16.04 to install spinnaker (at least 4 cores and 16GB of RAM)
+- In order to connect to Spinnaker UI VM must have ports 22,9000, 8084 enabled.
 - A running kubernetes cluster
 - A valid kubeconfig file
+- Be able to create a gcloud service account for spinnaker (instructions provided above)
 
 ### 1. Add to your ansible hosts file an entry for spinnaker:
 
@@ -34,8 +35,30 @@ x.x.x.x
 Copy and paste a valid kubeconfig file in the following path:
 
 ```
-templates/kubeconfig
+playbooks/templates/kubeconfig
 ```
 
-It will be used by kubectl to create a spinnaker service account the target kubernetes.
+It will be used by kubectl to create a spinnaker service account in the target kubernetes.
 
+### 3. Create a google service account to spinnaker can manage GCS:
+
+Execute the script located at
+```
+scripts/create_spinnaker_gcloud_service_account.sh
+```
+
+You must be logged in with gcloud in the project is intended to use. The script will crete the service account named spinnaker-gcs-account. 
+
+You must copy the json file that contains the auth information of the service account. It is generated usually under 
+
+```
+
+/home/$USER/.gcp/gcs-account.json
+
+```
+
+Copy it in the following path:
+
+```
+playbooks/templates/gcs-account.json
+```
