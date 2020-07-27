@@ -5,32 +5,20 @@
   file: path=/home/{{ system_user }}/.kube state=directory
 
 # The following task just copy a kubeconfig file. You must provide it 
-- name: Copy init kubeconfig file to be able to create a service account 
+- name: Copy kubeconfig file to be able to manage k8s
   copy:
     src: ../templates/kubeconfig
     dest: /home/{{ system_user }}/.kube/config
     owner: "{{ system_user }}"
     group: "{{ system_user }}"
 
-- name: Copy shell script to create kubernetes spinnaker service account
-  copy:
-    src: ../templates/create_spinnaker_service_account.sh
-    dest: /home/{{ system_user }}/create_spinnaker_service_account.sh
-    owner: "{{ system_user }}"
-    group: "{{ system_user }}"
-    mode: u+r+x
-
-
-- name: Create spinnaker service account
-  command: bash /home/{{ system_user }}/create_spinnaker_service_account.sh
-
 - name: Adding account (First make sure that the provider is enabled)
   command: hal config provider kubernetes enable
 
-- name: Adding account (hal config provider kubernetes account add my-k8s-account --context $CONTEXT)
+- name: Adding account (hal config provider kubernetes account add k8s-cluster --context $CONTEXT)
   shell: |
     CONTEXT=$(kubectl config current-context)
-    hal config provider kubernetes account add my-k8s-account --context $CONTEXT
+    hal config provider kubernetes account add k8s-cluster --context $CONTEXT
 
 - name:   Tell Halyard in what type of environment to install Spinnaker (localdebian)
   command: hal config deploy edit --type localdebian

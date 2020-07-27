@@ -7,6 +7,12 @@
     update_cache: yes
     cache_valid_time: 3600
 
+- name: Install java
+  become: yes
+  apt:
+    name: default-jdk
+    state: present
+    
 - name: Download Halyard
   get_url:
     url=https://raw.githubusercontent.com/spinnaker/halyard/master/install/debian/InstallHalyard.sh

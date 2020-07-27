@@ -1,0 +1,18 @@
+---
+# tasks file for enable-ui
+
+
+- name: override base url (ui)
+  command: hal config security ui edit --override-base-url http://{{ spinnaker_domain }}:9000
+
+- name: override base url (api)
+  command: hal config security api edit --override-base-url http://{{ spinnaker_domain }}:8084
+
+- name: deploy to spinnaker apply the change
+  command: sudo hal deploy apply
+
+
+
+
+
+

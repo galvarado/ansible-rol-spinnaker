@@ -1,5 +1,5 @@
-SERVICE_ACCOUNT_NAME=spinnaker-gcs-account
-SERVICE_ACCOUNT_DEST=~/.gcp/gcs-account.json
+export SERVICE_ACCOUNT_NAME=spinnaker-gcs-account
+export SERVICE_ACCOUNT_DEST=~/.gcp/gcs-account.json
 
 gcloud iam service-accounts create \
     $SERVICE_ACCOUNT_NAME \

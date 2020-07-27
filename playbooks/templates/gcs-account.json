@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "sentinella-1139",
+  "private_key_id": "cff5309aa24c26feaba8e4689185fedb7e88f4b3",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDGMvCZcTcS/juK\nAG+mwvsPXCd/Sa+E5fmCa8ACOopGs0owJglzkUgnwBD/ZqhSNDTTtlisHcju9gHL\n40rLVzafZF2HqxGQ6IrgZAyYXHGd7OAsSHjFLadpwmGd6Wfq43EITKiPMDtBYoXE\nSyQoqpZVR3lJ+m/MFs2rXJ60S+3He5zx1Ev6XiJ2dHquxxl44nIEwLaK3vyAgBMH\nZ50x9QBWBIuVCoRCFUrI7SovsPk/x2t2mgo36W/Tat+fOpykOKwjZNhiDHqqQDqg\njbrElFusMjf0o2Fh7a1/8TwW0ZrLuDpORzKihqH1HpRIatfYNXph5L54MhR3Jlk1\ns33j3egTAgMBAAECggEAU/UJIV6pj0SdkQBNS41lz2RgoNVkYf4POxWMsQT+RSO2\npf2+3DMrJxd/u8jPPX8674HbPxGg58TTDvy51rgbfdqEmi83kjRHe/U1tqbWRCku\n7uNGMXR86dp7Amr4Z7Iv0+2xK3KpbzGea3/PEeDtLLPJp7JMAF6ageAKpGJTl7/A\nrUYz9KsqXEw3npASInBct0pTyXIWyYZp2HvMSEr2KAvIcmEXiDdECbNtoVE4tYel\nak5UebJxuhIYV6DpafeM5g+2RLois0kUa7HBryVPDOxsi/51zMkZ4gxieKGTeyVP\nC5Q5JHHE+g+CrKWGEHEVVRQHV38rog2upQoy0bwv/QKBgQDtJWvJm07wC7i+q4eS\n4YadH9x4c3VKJh6uP7DBSaNXadMOZVOkT2e2kObi/JkxDheZ9PjK1K7RCjOYTQkC\n0w/VyRQ4zvWQv3RP7svIeM/GQudMWaIDH1Zw+7MQfGk2Wqb+5yTuGDk66pl9F8B/\n26pCynfYG23dUK4u1QigpVvHrQKBgQDV9NYC5VTDUCzLUVCWkAhHl9d76MNQEM9r\nh/mBFvQ4R0v2trl9aOmBrMbrXt5G73NmdvoVgiPOpRtHUtib+wZn5KdGGY+/QB6f\nJBCCY/liMrYekqx6VRlafBkPALkyz14JDOi/R7qvo16Pt43kywTXH/oq+oWCOWlv\n56pmXMlmvwKBgAGhx0sc4X8vZXcScR1mpemA5aCCkuUOvBlQ4OODoTchyE0KD3hK\n/5i3CI+5U0iOI0Vw9SFYM1fG7TH4Hb7COxKqjpQRgIkdeCxwpUBc7Hkdzr+swjup\nRIwEf2f2oza3ivyoFI365rHsGWBOAIogtdw9znNTRP9H5dr2pleMq8QFAoGAaVqh\nU1W30mEVXZyR0UHlQdOsIPCx1Cgi6vFO09kIsvmwlzDMz8ssSFVasiXJ0CYyrf7i\nEFs/5I56izlpPg1yzw/RqnwFw4gATB7HHl26PDd6ZD2XPrnOvTakZDXX/AQOauh3\nZ1EbxUbt1ljtPv8VSBUP67/mpAQ/PgJWbwc7iSMCgYEA4TAOphLMPGVLWNXh3ySI\nokJu6VFRRAiX6igkZ5SWSLwlz+RtClBXPYgaJ63HjKEYkp6yTA738hFyWWExj/Os\nM+0eq73AGavKer3VFW9xmq5jPFBtqwJy6PvF5kj5eB4Lef22v/yaakPqUhYwtOkD\n5y0nkDfIhEOmvGSY3vYBfkk=\n-----END PRIVATE KEY-----\n",
+  "client_email": "spinnaker-gcs-account@sentinella-1139.iam.gserviceaccount.com",
+  "client_id": "105660828845811327367",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/spinnaker-gcs-account%40sentinella-1139.iam.gserviceaccount.com"
+}

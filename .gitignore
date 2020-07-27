@@ -1,2 +1,4 @@
-playbooks/templates/kubeconfig
+playbooks/templates/gcr-account.json
 playbooks/templates/gsc-account.json
+scripts/kubeconfig
+scripts/spinnaker-sa.yaml
